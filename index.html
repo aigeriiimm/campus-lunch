@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Monday lunch menu for Campus Lunch.">
+    <title>Campus Lunch</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">Campus Lunch</p>
+        <h1>Lunch menu</h1>
+        <p class="intro">Choose a day to see its campus lunch options.</p>
+      </header>
+
+      <section aria-labelledby="menu-heading">
+        <div class="menu-controls">
+          <div>
+            <label for="day-selector">Day</label>
+            <select id="day-selector" name="day">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+            </select>
+          </div>
+          <p id="meal-count" class="meal-count" aria-live="polite"></p>
+        </div>
+        <h2 id="menu-heading" class="visually-hidden">Meals</h2>
+        <div id="meal-list" class="meal-list" aria-live="polite"></div>
+        <p id="empty-message" class="empty-message" hidden>No meals are available today.</p>
+      </section>
+    </main>
+
+    <template id="meal-card-template">
+      <article class="meal-card">
+        <div class="meal-card__header">
+          <h3 class="meal-card__name"></h3>
+          <span class="meal-card__label"></span>
+        </div>
+        <p class="meal-card__description"></p>
+        <p class="meal-card__price"></p>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
